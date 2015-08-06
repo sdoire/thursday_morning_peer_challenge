@@ -3,7 +3,6 @@ var adj2Array = [];
 var nounArray = [];
 
 $(document).ready(function(){
-    //callAjax(adj1, adj1Array);
     $(".generate").prop("disabled", true);
 
     $.ajax({
@@ -35,22 +34,16 @@ $(document).ready(function(){
     });
 
     $("body").on("click", ".generate", function(){
-        var i = getRandomNumber(0, 9);
-        var index1 = adj1Array[0][i];
-        var j = getRandomNumber(0, 9);
-        var index2 = adj2Array[0][j];
-        var k = getRandomNumber(0, 9);
-        var indexNoun = nounArray[0][k];
-        console.log(index1);
-        console.log(index2);
-        console.log(indexNoun);
+        var index1 = adj1Array[0][getRandomNumber(0, adj1Array.length-1)];
+        var index2 = adj2Array[0][getRandomNumber(0, adj2Array.length-1)];
+        var indexNoun = nounArray[0][getRandomNumber(0, adj1Array.length-1)];
         $("#story").children().last().remove();
         $("#story").append("<p>" + index1 + " " + index2 + " " + indexNoun + "</p>");
     });
 
 
 
-}); // end document ready
+});
 
 function getRandomNumber(min, max){
     return Math.floor(Math.random() * (1 + max - min) + min);
