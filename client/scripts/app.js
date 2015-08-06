@@ -34,9 +34,9 @@ $(document).ready(function(){
     });
 
     $("body").on("click", ".generate", function(){
-        var index1 = adj1Array[0][getRandomNumber(0, adj1Array.length-1)];
-        var index2 = adj2Array[0][getRandomNumber(0, adj2Array.length-1)];
-        var indexNoun = nounArray[0][getRandomNumber(0, adj1Array.length-1)];
+        var index1 = adj1Array[0][getRandomNumber(0, 9)];
+        var index2 = adj2Array[0][getRandomNumber(0, 9)];
+        var indexNoun = nounArray[0][getRandomNumber(0, 9)];
         $("#story").children().last().remove();
         $("#story").append("<p>" + index1 + " " + index2 + " " + indexNoun + "</p>");
     });
